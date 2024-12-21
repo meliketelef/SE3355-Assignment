@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= category %> Advertisements</title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+   
+    <header>
+        <a href="/" class="logo">sahibinden.com</a>
+        <div class="search-bar"> 
+            <input type="text" placeholder="type...">
+            <button>Search</button>
+        </div>
+    </header>
+
+  
+    <main>
+        <h1><%= category %> Category</h1>
+        
+
+        <div class="listings">
+            <% listings.forEach(listing => { %>
+                <div class="listing">
+                    <a href="/detail/<%= listing.ad_no %>"><!-- ID'ye göre detay sayfasına git -->
+                        <img src="<%= listing.image %>" alt="<%= listing.title %>">
+                        <h3><%= listing.title %></h3>
+                    </a>
+                    <p>Price: <%= listing.price %></p>
+                </div>
+            <% }); %>
+        </div>
+        
+        
+    </main>
+</body>
+</html>

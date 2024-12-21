@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">sahibinden.com</a>
+        <div class="search-bar">
+            <form action="/search" method="GET">
+                <input 
+                    type="text" 
+                    name="q" 
+                    placeholder="Text" 
+                    required
+                >
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    
+
+    <main>
+        <!-- Kategoriler -->
+        <div class="categories">
+            <h2>CATEGORIES</h2>
+            <ul>
+                <% categories.forEach(category => { %>
+                    <li><a href="/search/<%= category %>"><%= category %></a></li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="listings">
+            <% allListings.forEach(listing => { %>
+                <div class="listing">
+                    <a href="/detail/<%= listing.ad_no %>"> <!-- ID ile yönlendirme -->
+                        <img src="<%= listing.image %>" alt="<%= listing.title %>">
+                        <h3><%= listing.title %></h3>
+                    </a>
+                   
+                </div>
+            <% }); %>
+        </div>
+        
+    </main>
+</body>
+</html>

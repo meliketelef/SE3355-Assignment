@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= listing.title %> Detay</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">sahibinden.com</a>
+    </header>
+
+   
+    <main>
+        <div class="details-container">
+            <!-- Görsel Kısmı -->
+            <img src="<%= listing.image %>" alt="<%= listing.title %>" class="details-image">
+
+            <!-- Bilgi Alanı -->
+            <div class="details-info">
+                <h1 class="details-title"><%= listing.title %></h1>
+                <p><strong>Ad No:</strong> <%= listing.ad_no %></p>
+                <p><strong>Description:</strong> <%= listing.description %></p>
+                <p><strong>Price:</strong> <%= listing.price %></p>
+                <p><strong>City:</strong> <%= listing.city %></p>
+                <p><strong>Category:</strong> <%= listing.category %></p>
+            </div>
+        </div>
+
+       
+    </main>
+</body>
+</html>

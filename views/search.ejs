@@ -1,0 +1,25 @@
+<main>
+    <h1>Search Results for "<%= query %>"</h1>
+
+    <% if (results.length > 0) { %>
+        <div class="search-results">
+            <% results.forEach(result => { %>
+                <div class="search-result">
+                    <img src="<%= result.image %>" alt="<%= result.title %>">
+                    <div class="details">
+                        <h3><%= result.title %></h3>
+                        <p><strong>Ad No:</strong> <%= result.ad_no %></p>
+                        <p><strong>Description:</strong> <%= result.description %></p>
+                        <p><strong>Price:</strong> <%= result.price %></p>
+                        <p><strong>City:</strong> <%= result.city %></p>
+                        <p><strong>Category:</strong> <%= result.category %></p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <div class="search-results empty">
+            <p>No results found for "<%= query %>".</p>
+        </div>
+    <% } %>
+</main>
